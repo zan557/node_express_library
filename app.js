@@ -14,11 +14,13 @@ const app = express();
 // Set up mongoose connection
 const mongoose = require("mongoose");
 mongoose.set("strictQuery", false);
-const mongoDB = "";
+//slight modification to read from a local js file
+my_secret = require("./secret.js");
+
 
 main().catch((err) => console.log(err));
 async function main() {
-  await mongoose.connect(mongoDB);
+  await mongoose.connect(my_secret.cloud_mongodb);
 }
 
 // view engine setup
