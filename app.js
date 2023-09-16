@@ -17,10 +17,9 @@ mongoose.set("strictQuery", false);
 //slight modification to read from a local js file
 my_secret = require("./secret.js");
 
-
 main().catch((err) => console.log(err));
 async function main() {
-  await mongoose.connect(my_secret.cloud_mongodb);
+  await mongoose.connect(my_secret);
 }
 
 // view engine setup
